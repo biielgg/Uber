@@ -38,6 +38,7 @@
             android:layout_marginRight="4dp"
             android:layout_weight="1.5"
             android:background="@color/btnLogin"
+            android:onClick="abrirTelaLogin"
             android:text="Entrar"
             android:textColor="@color/white"
             app:backgroundTint="@color/btnLogin" />
@@ -49,6 +50,7 @@
             android:layout_marginLeft="4dp"
             android:layout_weight="1"
             android:background="@color/btnCadastro"
+            android:onClick="abrirTelaCadastro"
             android:text="Cadastrar"
             android:textColor="@color/white"
             app:backgroundTint="@color/btnCadastro" />
