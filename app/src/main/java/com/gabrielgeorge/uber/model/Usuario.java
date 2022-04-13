@@ -1,5 +1,12 @@
 package com.gabrielgeorge.uber.model;
 
+import android.widget.Toast;
+
+import com.gabrielgeorge.uber.activity.CadastroActivity;
+import com.gabrielgeorge.uber.config.ConfiguracaoFirebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
+
 public class Usuario {
 
     private String id;
@@ -9,6 +16,13 @@ public class Usuario {
     private String tipo;
 
     public Usuario() {
+    }
+
+    public void salvar(){
+        DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
+        DatabaseReference usuarios = firebaseRef.child("usuarios").child(getId());
+
+        usuarios.setValue(this);
     }
 
     public String getId() {
@@ -35,6 +49,7 @@ public class Usuario {
         this.email = email;
     }
 
+    @Exclude
     public String getSenha() {
         return senha;
     }
